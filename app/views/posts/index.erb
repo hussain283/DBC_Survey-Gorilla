@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Posts</h1>
+  <ol>
+  <% @posts.each_with_index do |post,index| %>
+    <%= erb :'posts/_post' , locals: {:post => post, :index => index} %>
+  <% end %>
+
+
+</div>

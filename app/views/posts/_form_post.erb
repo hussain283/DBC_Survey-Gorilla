@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>New/Update Post</h1>
+
+  <% unless @post.errors.blank? %>
+    <div class="errors"><%= @post.errors.full_messages %></div>
+  <% end %>
+
+  <form id="form_post" method="post" action="/posts/create">
+    <label class="label" for="post[title]">Title</label>
+    <input type="text" name="post[title]" placeholder="Choose a Title" value="<%= @post.title %>"><br>
+    <label class="label" for="post[url]">Url</label>
+    <input type="text" name="post[url]" placeholder="Whats the URL" value="<%= @post.url %>">
+    <br>
+    <h1>OR</h1>
+    <br>
+    <label class="label" for="post[content]">Content</label>
+    <textarea name="post[content]" placeholder="Some Stuff goes Here"><%= @post.content %>
+    </textarea>
+    <div class="submit"><input type="submit" value="Create"></div>
+  </form>
+
+</div>

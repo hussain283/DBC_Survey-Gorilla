@@ -15,6 +15,8 @@ gem 'activerecord'
 gem 'rake'
 gem 'bcrypt-ruby'
 
+gem 'time-lord', '~> 1.0'
+
 gem 'shotgun'
 
 group :development, :test do

@@ -1,0 +1,6 @@
+<div class='container'>
+  <h1><%=@user.name%>'s Posts</h1>
+<% @user.posts.all.each do |post| %>
+  <%= erb :'posts/_post', locals: {:post => post} %>
+<% end %>
+</div>

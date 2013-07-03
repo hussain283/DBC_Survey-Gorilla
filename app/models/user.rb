@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   validates :password, :format => {:with => /^(?=.*\d)(?=.*[a-zA-Z]).{4,8}$/, :message => "Password must be 4-8 chars long and must contain one letter and one number"}, :on => :create
   before_create :encrypt_password
 
+  has_many :comments, dependent: :destroy
+  has_many :posts, dependent: :destroy
+
   def encrypt_password
     self.password = BCrypt::Password.create(self.password).to_s
   end
@@ -14,8 +17,6 @@ class User < ActiveRecord::Base
   def self.authenticate(email, password)
     User.all.each do |user| 
       if (BCrypt::Password.new(user.password) == password) && (user.email == email)
-        p user
-        p BCrypt::Password.new(user.password)
         return user
       end
     end

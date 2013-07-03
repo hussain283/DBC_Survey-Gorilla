@@ -1,0 +1,7 @@
+<div class='container'>
+  <h1><%=@user.name%>'s Posts</h1>
+<% @user.comments.each do |comment| %>
+  On <%=comment.post.title %>: <br>
+  <%= erb :'posts/_comment', locals: {:comment => comment} %> 
+<% end %>
+</div>
