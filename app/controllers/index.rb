@@ -2,6 +2,6 @@ get '/' do
   if logged_in?
     redirect "/users/dashboard"
   else
-  erb :index
+    erb :index
   end
 end
