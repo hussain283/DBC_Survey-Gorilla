@@ -19,6 +19,8 @@ gem 'time-lord', '~> 1.0'
 
 gem 'shotgun'
 
+gem 'carrierwave'
+
 group :development, :test do
   gem 'faker'
   gem 'rspec'

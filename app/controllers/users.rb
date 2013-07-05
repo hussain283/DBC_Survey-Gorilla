@@ -18,5 +18,6 @@ post '/users' do
 end
 
 get '/users/dashboard' do
-  erb :index
+  @surveys = current_user.surveys
+  erb :'users/dashboard'
 end
