@@ -1,5 +1,3 @@
-#----------- USERS -----------
-
 get '/users/new' do
   # render sign-up page
   @user = User.new
@@ -19,22 +17,6 @@ post '/users' do
   end
 end
 
-get '/users/:id/show' do |id|
-  @user = User.find(id)
-  erb :'users/show'
-end
-
-get '/users/:id/posts' do |id|
-  @user = User.find(id)
-  erb :'users/posts'
-end
-
-get '/users/:id/comments' do |id|
-  @user = User.find(id)
-  erb :'users/comments'
-end
-
-get '/users/:id/delete' do
-  User.delete(params[:id])
-  redirect "/"
+get '/users/dashboard' do
+  erb :index
 end
