@@ -1,14 +1,11 @@
-<div class="container">
-    <form action="/survery_attempt" method="post" class="take-survery">
-      <input type="hidden" name='survey_id[<%= @survey.id %>]'>
-    <% @survey.questions.each do |question| %>
-      <p><%= question.question %></p>
-      <% question.answers.each do |answer| %>
-        <input type="radio" name='question[<%= question.id %>]' value='answer[<%= answer.id %>]'> <%= answer.choice %> <br>
-      <% end %>
+<form action="/survery_attempt" method="post" class="take-survery">
+  <input type="hidden" name='survey_id' value='<%= @survey.id %>'>
+  <% @survey.questions.each do |question| %>
+    <p><%= question.question %></p>
+    <% question.answers.each do |answer| %>
+      <input type="radio" name='response[<%=question.id%>]' value='<%= answer.id %>'> <%= answer.choice %> <br>
     <% end %>
-    <input type="submit" value="Submit">
-  </form>
-</div>
+  <% end %>
+  <input type="submit" value="Submit">
+</form>
 
-<script src="js/survey_attempt.js"></script>

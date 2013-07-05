@@ -5,8 +5,9 @@ end
 
 
 post '/survery_attempt' do
-  p params
-  p params[:survery_id]
-  p params[:question]
-  # SurveyAttempt.create(survey_id:)
+  survey_attempt = SurveyAttempt.create(survey_id: params[:survey_id])
+  params[:response].each do |question_id, answer_id|
+    Response.create(question_id: question_id, answer_id: answer_id, survey_attempt_id: survey_attempt.id)
+  end
+  redirect '/'
 end
