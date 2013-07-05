@@ -2,6 +2,7 @@
 
   <% @surveys.each do |survey| %>
     <p><a href="#"><%= survey.title %></a></p>
+    <p><a href="/<%= survey.token %>">Take Survey</a></p>
   <% end %>
 
 
