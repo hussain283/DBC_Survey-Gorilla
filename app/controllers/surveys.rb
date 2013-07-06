@@ -20,16 +20,15 @@ end
 get '/surveys/:id/show' do |id|
   @survey = Survey.find(id)
   @graph_data = []
-  responses_array = []
-  @survey.questions.first.answers.each do |answer|
-    responses_array << Response.where(answer_id: answer.id).count
+  @survey.questions.each do |question|
+    responses_array = []
+    choices = []
+    question.answers.each do |answer|
+      responses_array << Response.where(answer_id: answer.id).count
+      choices << answer.choice
+    end
+    @graph_data << {data: responses_array, title: question.question, choices:  choices}
   end
-  choices = @survey.questions.first.answers.map {|answer| answer.choice}
-  @graph_data << {data: responses_array, title: @survey.questions.first.question, choices: choices}
-  @graph_data << {data: responses_array, title: @survey.questions.first.question, choices: choices}
-
-
   @graph_data = @graph_data.to_json
-
   erb :"surveys/show"
 end
