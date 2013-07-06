@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  window.questionOptions = ["Yes, we're lovers", 'And that is that','Though nothing', 'will keep us together', 'We could steal time','Just for one day','this is too long','and that is why','you have no friends']
+
   $('#add_question').on('click',function(event){
     event.preventDefault();
     $.ajax({
@@ -12,14 +14,15 @@ $(document).ready(function(){
 
   $('#survey_form').on('click','#add_option',function(event){
     event.preventDefault();
+
     var self = this;
 
     $.ajax({
       type: 'get',
       url: '/surveys/questions/options/new'
     }).done(function(o_html){
-      console.log('hello');
       $(self).closest('.question').find('.options_wrapper').append(o_html);
+      $(".options_wrapper").find("input").last().attr("placeholder", questionOptions.shift());
     });
   });
 

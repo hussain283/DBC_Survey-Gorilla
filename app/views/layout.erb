@@ -8,6 +8,8 @@
   <script src="/js/application.js"></script>
   <script src="/js/survey.js"></script>
   <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script type="text/javascript" src="//use.typekit.net/zxg1hsv.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
   <title></title>
 </head>
@@ -15,23 +17,24 @@
 
   <nav>
 
-    <div class="brand"><a href="/">Survey Gorilla</a></div>
-
-    <ul>
-      <% if current_user %>
-        <li><a id="sign-out" href="/sessions/<%= current_user.id %>">Sign Out</a></li>
+    <!-- <div class="brand"><a href="/">Survey Gorilla</a></div> -->
+    <div class='top_bar'>
+      <ul>
+        <% if current_user %>
+        <li><a id="sign-out" href="/sessions/<%= current_user.id %>">SIGN OUT</a></li>
         <li>
-        <a href="/surveys/new">New Survey</a>
-      </li>
-      <% else %>
-        <li><a href="/sessions/new">Sign In</a></li>
-        <li><a href="/users/new">Sign Up</a></li>
-      <% end %>
-    </ul>
-
+          <a href="/surveys/new">NEW SURVEY</a>
+        </li>
+        <% else %>
+        <li><a href="/sessions/new">SIGN IN</a></li>
+        <li><a href="/users/new">SIGN UP</a></li>
+        <% end %>
+      </ul>
+    </div>
   </nav>
-<div class="container">
-  <%= yield %>
-</div>
+  <div class="container">
+    <%= yield %>
+  </div>
+
 </body>
 </html>

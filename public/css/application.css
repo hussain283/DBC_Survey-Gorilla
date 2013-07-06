@@ -1,75 +1,183 @@
-.container {
-  margin: 20px auto;
-  width: 800px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+body{
+  background-color: #FAFAF6;
 }
 
-.container h1 {
-  font-size: 17pt;
+.container {
+  margin: 20px auto;
+  width: 500px;
+  padding: 30px;
+  background-color: #E6E5E1;
+  color:#D63737;
+  position: relative;
+}
 
+h1 {
+  margin-top: 0;
+}
+
+/*h2{
+  padding:1em;
+  font-size: 40px;
+  text-align: center;
+  color:#A18E5C;
+  background-color: #2B2B2B;
+  width:50%;
+  height:3em;*/
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background: #D63737;
 }
 
 nav {
   width: 100%;
-  height: 40px;
-  font-weight: bold;
+  text-align: right;
+  background-color: #2B2B2B;
 }
 
-nav .brand, nav .brand a {
-  margin-left: 25px;
-  font-size: 18pt;
-  text-decoration: none;
-  color: #444;
-  width: 60%;
-  display: inline-block;
+nav .top_bar {
+  width: 540px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 nav ul {
-  display: inline-block;
-  width: 30%;
+  display: block;
   text-align: right;
+  margin:0;
+  list-style-type: none;
+  overflow: hidden;
+  float: right;
+  margin-right: -20px;
 }
 
 nav li {
-  margin-right: 25px;
-  display: inline;
+  float: left;
 }
 
 nav li a {
-  color: gray;
+  color: #D63737;
   text-decoration: none;
+  padding: 20px;
+  display: block;
 }
 
 nav li a:hover {
-  text-decoration: underline;
+  color:#A28F5E;
 }
 
-form label {
-  font-weight: bold;
-  margin-right: 20px;
+label{
+
 }
 
-input {
-  margin-bottom: 10px;
+input[type=text]{
+  padding:10px;
+  margin:15px 15px 15px 0;
+}
+
+form.session {
+
+}
+
+form.session label {
+  width:80px;
+  display:inline-block;
+}
+
+form.session input[type=text], form.session input[type=password], form.session input[type=email] {
+  padding:8px;
+  margin:15px;
+}
+
+input[name="survey[title]"] {
+  width: 212px;
+}
+
+.button {
+  background: #D63737;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background: #444;
 }
 
 .errors {
   color: red;
 }
 
-form.quirks {
-  display: inline-block;
+.survey {
+  padding: 20px;
+  margin: 0 0 10px 0;
+  overflow: hidden;
 }
 
-.submit {
-  text-align: center;
+.survey:hover {
+  background: #444;
 }
 
-.label {
-  font-weight: bold;
+.survey h1 {
   float: left;
-  text-align: right;
-  margin-right: 20px;
-  width: 200px;
+}
+
+.survey h1 a {
+  color: #A18E5C;
+  text-decoration: none;
+}
+
+.survey a.button {
+  float: right;
+  margin-top: 0;
+  text-decoration: none;
+  border: 1px solid #D63737;
+}
+
+.button_survey{
+  text-decoration: none;
+  color:#A18E5C;
+  background-color: rgb(236, 232, 218);
+  padding:10px;
+  border: 1px solid #A18E5C;
+  margin-top: 10px;
+  display: inline-block;
+  position: absolute;
+  top: 40px;
+  right: 0px;
+}
+
+a#add_button.button_survey{
+  position:absolute;
+  top:22;
+}
+
+a#add_option.button_survey {
+  top: 5px;
+}
+
+.button_survey:hover{
+  text-decoration: none;
+  background-color:#E3DECC;
+  color:#A18E5C;
+}
+
+#survey_form {
+  position: relative;
+}
+
+#survey_form p {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+div.questions_wrapper, div.options_wrapper {
+  position:relative;
+}
+
+.question > input {
+  width: 330px;
 }

@@ -1,8 +1,10 @@
 <div id='dashboard'>
 
   <% @surveys.each do |survey| %>
-    <p><a href="/surveys/<%= survey.id %>/show"><%= survey.title %></a></p>
-    <p><a href="/<%= survey.token %>">Take Survey</a></p>
+    <div class="survey">
+      <h1><a href="/surveys/<%= survey.id %>/show"><%= survey.title %></a></h1>
+      <a href="/<%= survey.token %>" class="button">Take Survey</a>
+    </div>
   <% end %>
 
 
