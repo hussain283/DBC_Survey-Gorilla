@@ -1,11 +1,7 @@
 <div id='dashboard'>
-
-  <% @surveys.each do |survey| %>
-    <div class="survey">
-      <h1><a href="/surveys/<%= survey.id %>/show"><%= survey.title %></a></h1>
-      <a href="/<%= survey.token %>" class="button">Take Survey</a>
-    </div>
-  <% end %>
-
-
+  <div class="survey_wrapper">
+	  <% @surveys.each do |survey| %>
+	  	<%= erb :'users/_survey', locals: {survey: survey} %>
+	  <% end %>
+  </div>
 </div>

@@ -32,3 +32,8 @@ get '/surveys/:id/show' do |id|
   @graph_data = @graph_data.to_json
   erb :"surveys/show"
 end
+
+delete "/surveys/delete" do
+  Survey.delete(params[:id])
+  return
+end

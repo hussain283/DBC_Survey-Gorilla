@@ -15,6 +15,10 @@ h1 {
   margin-top: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*h2{
   padding:1em;
   font-size: 40px;
@@ -22,8 +26,8 @@ h1 {
   color:#A18E5C;
   background-color: #2B2B2B;
   width:50%;
-  height:3em;*/
-}
+  height:3em;
+}*/
 
 hr {
   height: 1px;
@@ -35,6 +39,15 @@ nav {
   width: 100%;
   text-align: right;
   background-color: #2B2B2B;
+}
+
+nav .top_bar .brand {
+  float: left;
+}
+
+nav .top_bar .brand a {
+  text-decoration: none;
+  color: #D63737;
 }
 
 nav .top_bar {
@@ -55,11 +68,11 @@ nav ul {
 
 nav li {
   float: left;
+  line-height: 25px;
 }
 
 nav li a {
   color: #D63737;
-  text-decoration: none;
   padding: 20px;
   display: block;
 }
@@ -89,6 +102,7 @@ form.session label {
 form.session input[type=text], form.session input[type=password], form.session input[type=email] {
   padding:8px;
   margin:15px;
+  width: 200px;
 }
 
 input[name="survey[title]"] {
@@ -117,8 +131,12 @@ input[name="survey[title]"] {
   overflow: hidden;
 }
 
-.survey:hover {
-  background: #444;
+.survey i {
+  display: none;
+}
+
+.survey:hover i  {
+  display: inline;
 }
 
 .survey h1 {
@@ -134,10 +152,9 @@ input[name="survey[title]"] {
   float: right;
   margin-top: 0;
   text-decoration: none;
-  border: 1px solid #D63737;
 }
 
-.button_survey{
+.button_survey {
   text-decoration: none;
   color:#A18E5C;
   background-color: rgb(236, 232, 218);
@@ -145,17 +162,23 @@ input[name="survey[title]"] {
   border: 1px solid #A18E5C;
   margin-top: 10px;
   display: inline-block;
-  position: absolute;
   top: 40px;
   right: 0px;
 }
 
-a#add_button.button_survey{
-  position:absolute;
-  top:22;
+
+a.hide_options {
+  display: none;
 }
 
-a#add_option.button_survey {
+.question:hover a.hide_options {
+  display: inline;
+}
+
+a#add_question.button_survey{
+}
+
+a.add_option.button_survey {
   top: 5px;
 }
 
@@ -179,5 +202,10 @@ div.questions_wrapper, div.options_wrapper {
 }
 
 .question > input {
-  width: 330px;
+  width: 320px;
+}
+
+.chart-container {
+  position: relative;
+  margin: 10px 0 10px 0;
 }

@@ -3,8 +3,10 @@
 <head>
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/application.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="/js/application.js"></script>
   <script src="/js/survey.js"></script>
   <script src="http://code.highcharts.com/highcharts.js"></script>
@@ -16,9 +18,10 @@
 <body>
 
   <nav>
-
-    <!-- <div class="brand"><a href="/">Survey Gorilla</a></div> -->
     <div class='top_bar'>
+      <div class="brand">
+        <h2><a href="/">Survey Gorilla</a><h2>
+      </div>
       <ul>
         <% if current_user %>
         <li><a id="sign-out" href="/sessions/<%= current_user.id %>">SIGN OUT</a></li>

@@ -1,4 +1,12 @@
-<h2>Survey <br> Gorilla</h1>
+<div id="home">
+  <h3>Take a survey, Bitch!</h3>
+
+    <div class="survey_wrapper">
+	  <% @surveys.each do |survey| %>
+	  	<%= erb :'users/_survey', locals: {survey: survey} %>
+	  <% end %>
+    </div>
+</div>
 
 
 

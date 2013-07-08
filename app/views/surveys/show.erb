@@ -1,14 +1,9 @@
-<h2><%= @survey.title %></h2>
-
-<% @survey.survey_attempts.each do |attempt| %>
-
-<% end %>
-
+<h2><%= @survey.title %> - Survey Results</h2>
 
 <script>
 var graphData = <%= @graph_data %>;
 $(document).ready(function() {
-  var chartTemplate = '<div id="chart-container"></div>'
+  var chartTemplate = '<div class="chart-container" style="width: 500px"></div>'
   $.each(graphData, function(k, data) {
     var $chartTemplate = $(chartTemplate);
     $chartTemplate.highcharts({
@@ -38,5 +33,3 @@ $(document).ready(function() {
 
 });
 </script>
-
-<!-- <script src="/js/chart.js"></script> -->

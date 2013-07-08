@@ -1,0 +1,7 @@
+<div class="survey" data-id="<%= survey.id %>">
+  <% if survey.user_id == current_user.try(:id) %>
+	<i class="icon-remove-sign remove-survey"></i>
+  <% end %>
+  <h1><a href="/surveys/<%= survey.id %>/show"><%= survey.title %></a></h1>
+  <a href="/<%= survey.token %>" class="button">Take Survey</a>
+</div>
